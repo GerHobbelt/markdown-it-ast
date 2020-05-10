@@ -1,7 +1,3 @@
-
-'use strict';
-
-
 function markdownItAST(tokens) {
   function genTreeNode(node) {
     return {
@@ -42,6 +38,10 @@ function markdownItAST(tokens) {
   return rootNode.children;
 }
 
-module.exports = {
+var markdownItAst = {
   makeAST: markdownItAST
 };
+var markdownItAst_1 = markdownItAst.makeAST;
+
+export default markdownItAst;
+export { markdownItAst_1 as makeAST };

@@ -1,12 +1,7 @@
 {
-  "name": "markdown-it-ast",
-  "version": "0.0.1",
+  "name": "@gerhobbelt/markdown-it-ast",
+  "version": "0.0.1-1",
   "description": "Generate AST from tokens parsed from markdown-it.",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/andy0130tw/markdown-it-ast.git"
-  },
   "keywords": [
     "markdown-it-plugin",
     "markdown-it",
@@ -14,22 +9,39 @@
     "ast"
   ],
   "author": "Andy Pan",
+  "repository": "GerHobbelt/markdown-it-ast",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/andy0130tw/markdown-it-ast/issues"
-  },
-  "homepage": "https://github.com/andy0130tw/markdown-it-ast#readme",
+  "main": "index.js",
   "scripts": {
+    "build": "make",
     "test": "make test",
-    "build": "make"
+    "todo": "make todo",
+    "clean": "make clean",
+    "superclean": "make superclean",
+    "doc": "make doc",
+    "lint": "make lint",
+    "lintfix": "make lintfix",
+    "cov": "make report-coverage",
+    "pub": "npm publish --access public"
   },
   "devDependencies": {
-    "browserify": "14.4.0",
-    "eslint": "4.3.0",
-    "istanbul": "0.4.5",
-    "markdown-it": "GerHobbelt/markdown-it#master",
-    "markdown-it-testgen": "GerHobbelt/markdown-it-testgen#master",
-    "mocha": "3.5.0",
-    "uglify-js": "3.0.27"
-  }
+    "@gerhobbelt/markdown-it": "10.0.0-34",
+    "@gerhobbelt/markdown-it-testgen": "0.1.6-7",
+    "browserify": "16.5.1",
+    "chai": "4.2.0",
+    "cross-env": "7.0.2",
+    "eslint": "7.0.0",
+    "mocha": "7.1.2",
+    "nyc": "15.0.1",
+    "rollup": "2.9.0",
+    "rollup-plugin-commonjs": "10.1.0",
+    "rollup-plugin-json": "4.0.0",
+    "rollup-plugin-node-resolve": "5.2.0",
+    "terser": "4.6.13"
+  },
+  "reporter": [
+    "lcov",
+    "text",
+    "text-summary"
+  ]
 }

@@ -15,5 +15,6 @@ markdownItAST.makeAST(tokens);
 ## Structure
 `makeAST` returns a tree. Each token pair (open, close) is stored in `openNode` and `closeNode`, respectively. `nodeType` is derived from the opening token. Descendants are stored in `children`, and each descendant can be either an AST node **or an inline node**.
 
-# License
-This project is [licensed under MIT](https://github.com/andy0130tw/markdown-it-ast/LICENSE).
+## License
+
+This project is [licensed under MIT](https://github.com/GerHobbelt/markdown-it-ast/LICENSE).
