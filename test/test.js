@@ -1,7 +1,4 @@
-'use strict';
-
-
-/*eslint-env mocha*/
+/* eslint-env mocha, es6 */
 
 let mdAST = require('../');
 let assert = require('chai').assert;

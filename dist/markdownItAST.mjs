@@ -1,3 +1,5 @@
+/*! markdown-it-ast 0.0.1-2 https://github.com//GerHobbelt/markdown-it-ast @license MIT */
+
 function markdownItAST(tokens) {
   function genTreeNode(node) {
     return {
@@ -6,14 +8,15 @@ function markdownItAST(tokens) {
       closeNode: null,
       children: []
     };
-  }
+  } // dummy root node
 
-    // dummy root node
+
   let rootNode = genTreeNode(null);
   let curr = rootNode;
   let stack = [];
   tokens.forEach(function (tok, idx) {
     let tmp;
+
     if (tok.nesting === 1) {
       tmp = genTreeNode(tok);
       curr.children.push(tmp);
@@ -22,9 +25,9 @@ function markdownItAST(tokens) {
     } else if (tok.nesting === -1) {
       curr.closeNode = tok;
       if (!stack.length) throw new Error('AST stack underflow.');
-      tmp = stack.pop();
-            // TODO: check whether the close node corresponds to the one it opens
-            // curr = stack[stack.length - 1];
+      tmp = stack.pop(); // TODO: check whether the close node corresponds to the one it opens
+      // curr = stack[stack.length - 1];
+
       curr = tmp;
     } else if (tok.nesting === 0) {
       curr.children.push(tok);
@@ -33,15 +36,14 @@ function markdownItAST(tokens) {
     }
   });
 
-  if (stack.length !== 0) { throw new Error('Unbalanced block open/close tokens.'); }
+  if (stack.length !== 0) {
+    throw new Error('Unbalanced block open/close tokens.');
+  }
 
   return rootNode.children;
 }
 
-var markdownItAst = {
+module.exports = {
   makeAST: markdownItAST
 };
-var markdownItAst_1 = markdownItAst.makeAST;
-
-export default markdownItAst;
-export { markdownItAst_1 as makeAST };
+//# sourceMappingURL=markdownItAST.mjs.map
